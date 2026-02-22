@@ -9,7 +9,7 @@ pipeline {
             }
         }
 
-        stage('Stop Old Container') {
+        stage('Cleanup Old Container') {
             steps {
                 sh 'docker rm -f pipeline-demo || true'
             }
