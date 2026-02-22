@@ -3,13 +3,13 @@ pipeline {
 
     stages {
 
-        stage('Checkout SCM') {
+        stage('Checkout') {
             steps {
                 checkout scm
             }
         }
 
-        stage('Cleanup Old Container') {
+        stage('Stop Old Container') {
             steps {
                 sh 'docker rm -f pipeline-demo || true'
             }
