@@ -2,6 +2,13 @@ pipeline {
     agent any
 
     stages {
+
+        stage('Checkout SCM') {
+            steps {
+                checkout scm
+            }
+        }
+
         stage('Cleanup Old Container') {
             steps {
                 sh 'docker rm -f pipeline-demo || true'
