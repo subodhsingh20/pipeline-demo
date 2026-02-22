@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/YOUR_USERNAME/pipeline-demo.git'
+                git 'https://github.com/subodhsingh20/pipeline-demo.git'
             }
         }
 
