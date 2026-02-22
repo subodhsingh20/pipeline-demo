@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Repository') {
+        stage('Cleanup Old Container') {
             steps {
-                git 'https://github.com/subodhsingh20/pipeline-demo.git'
+                sh 'docker rm -f pipeline-demo || true'
             }
         }
 
@@ -16,7 +16,7 @@ pipeline {
 
         stage('Run Docker Container') {
             steps {
-                sh 'docker run -d -p 3000:3000 pipeline-demo'
+                sh 'docker run -d --name pipeline-demo -p 3000:3000 pipeline-demo'
             }
         }
     }
